@@ -1,0 +1,9 @@
+<h1>New Flashcard</h1>
+
+<!--Form for creating a new flashcard. 
+	the flashcards_path helper is passed to the :url option "the action that is used for new form submissions 
+	like this is called "create", and so the form should be pointed to that action"-->
+<%= render 'form'%>
+
+<!--Go back to the list of flashcards page -->
+	<%= link_to 'Back to My Flashcards', flashcards_path %> 
