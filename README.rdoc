@@ -1,9 +1,8 @@
 == README
 "Flashies"
-Create, Manage & Study your flash cards so you can ace any test
 
 Created by "Bandits"
-COMP333-14A(HAM)
+
 
 Things you may want to cover:
 
