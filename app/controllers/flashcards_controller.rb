@@ -1,4 +1,7 @@
 class FlashcardsController < ApplicationController
+  #users must be signed in to access their flashcards
+  before_action :sign_in_user
+ 
   # define the action to create a new controller (constructor?)
   def new
     @flashcard = Flashcard.new
@@ -6,12 +9,12 @@ class FlashcardsController < ApplicationController
   
   # define the action for creating a new flashcard
   def create
-    @user = User.find(params[:user_id])    #find the flashcard this note is associated with
-    @flashcard = @user.flashcards.create(flashcard_params)  #get the params entered and creat and save the note, automatically links to the particular flashcard
+    #@user = User.find(params[:user_id])    #find the flashcard this note is associated with
+    @flashcard = current_user.flashcards.build(flashcard_params)  #get the params entered and creat and save the note, automatically links to the particular flashcard
     
     # if the flash card met the title validations (set in model), save it to the db
     if @flashcard.save             # save the model in the database. 
-      redirect_to @flashcard      # Redirect the user to the show action, which we'll define later.
+      redirect_to @flashcard    
     #otherwise, return to the new flashcrad form
     #Render method is used (rather than redirect)so that the @article object is passed back to the new template when it is rendered. 
     else
@@ -40,7 +43,7 @@ class FlashcardsController < ApplicationController
     @flashcard = Flashcard.find(params[:id])
     @flashcard.destroy
     
-    redirect_to flashcards_path
+    redirect_to user_path(current_user)
   end
   
   # define the show method for a flash card

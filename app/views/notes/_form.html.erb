@@ -2,7 +2,6 @@
 <!--form_for call uses an array, which will build a nested route, such as /flashcards/1/notes -->
 <%= form_for([@flashcard, @flashcard.notes.build]) do |f| %>
 	<p>
-		<%= f.label :body %>
 		<%= f.text_area :body %>
 	</p>
 	<p>
