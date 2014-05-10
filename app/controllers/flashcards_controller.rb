@@ -6,11 +6,8 @@ class FlashcardsController < ApplicationController
   
   # define the action for creating a new flashcard
   def create
-    # render plain: params[:flashcard].inspect -- for inspecting the values of the form. replace with saving to db
-    # use the new flashcards model to save the data in the database....
-    # initialize the model with its respective attributes, which are automatically mapped to 
-    # the respective database columns. params[:article] contains the attributes we're interested in.    
-    @flashcard = Flashcard.new(flashcard_params)
+    @user = User.find(params[:user_id])    #find the flashcard this note is associated with
+    @flashcard = @user.flashcards.create(flashcard_params)  #get the params entered and creat and save the note, automatically links to the particular flashcard
     
     # if the flash card met the title validations (set in model), save it to the db
     if @flashcard.save             # save the model in the database. 
@@ -58,7 +55,9 @@ class FlashcardsController < ApplicationController
   def index
     @flashcards = Flashcard.all
   end
-  
+ 
+  #--------------PRIVATE---------------
+ 
   # create a method for accessing the flashcards paramaters (controllers require strong paramenters for security)
   private
   def flashcard_params

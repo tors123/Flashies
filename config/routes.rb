@@ -1,18 +1,27 @@
 Rails.application.routes.draw do
-  get 'welcome/index'
 
+  get 'welcome/index'
+  
+  #session for user logged on
+  resources :sessions, only:[:new, :create, :destroy]
+  # users have flashcards
+  resources :users
   # Set up flashcard resources
-    resources :flashcards do
-      #flashcards have notes attached (nested resources)
-      resources :notes
-    end
-    
+  resources :flashcards do
+    #flashcards have notes attached (nested resources)
+    resources :notes
+  end
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
  root 'welcome#index'
-
+  match '/signup', to: 'users#new',           via: 'get'
+  match '/signin', to: 'sessions#new',        via: 'get'
+  match '/signout', to: 'sessions#destroy',   via: 'delete'
+  
+    
  
     
   # Example of regular route:

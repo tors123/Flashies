@@ -12,5 +12,6 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= import bootstrap
 //= require turbolinks
 //= require_tree .

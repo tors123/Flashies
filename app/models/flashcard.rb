@@ -1,4 +1,5 @@
 class Flashcard < ActiveRecord::Base
+  belongs_to :user
   #allow a flashcard to have many notes attached
   #also ensure that if a flashcard is deleted, its notes are deleted from the db
   has_many :notes, dependent: :destroy

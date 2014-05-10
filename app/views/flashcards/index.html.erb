@@ -1,5 +1,8 @@
-<h1>My Flashcards</h1>
+<!--Provide a title-->
+<% provide(:title, 'My Flashcards')%>
 
+<!--List users flashcards-->
+<h1>My Flashcards</h1>
 <table>
 	<tr>
 		<th>Title</th>
@@ -17,4 +20,6 @@
 	<% end %>
 </table>
 
+
+<!--Link to create new flashcards-->
 <%= link_to ' Create new Flashcard', new_flashcard_path %>
