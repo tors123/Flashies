@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @user.name %>
+</p>
+
+<div>
+	<% if @user.flashcards.any? %>
+		<h3>My Flashcards (<% @user.flashcards.count %>)</h3>
+		<!--if the user has an flash cards, display them-->	
+		<ul class="users_flashcards">
+			<%= render @flashcards %>
+		</ul>
+		<!--allow for pages of flashcards-->
+		<% will_paginate @flashcards %>
+	<% else %>
+		<h3>My Flashcards (0)</h3>
+	<% end %>
+	<div>
+		<!--Link to create new flashcards-->
+		<%= link_to ' Create new Flashcard', new_flashcard_path %>	
+	</div>
+</div>

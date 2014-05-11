@@ -1,0 +1,10 @@
+<h1>Edit My Details</h1>
+
+<%= render 'form' %>
+
+<%= link_to 'Back to My Home', user_path(current_user) %>
+
+<h1>Delete My Account</h1>
+<!--Delete this account -->
+<p>Click here to <%= link_to 'Delete My Account',user_path(current_user), method: :delete, 
+			data: { confirm: 'Are you sure you want to delete your account?' } %> </p>
