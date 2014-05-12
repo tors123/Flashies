@@ -1,4 +1,5 @@
 <!--Display a flash card and its associated resources-->
+<h1>Flashcard</h1>
 <h2>Topic:</h2>
 <p><%= @flashcard.title %></p>
  
@@ -6,10 +7,10 @@
 <p><%= @flashcard.question %></p>
 
 <!-- Show any notes  or resources left about this flashcard -->
-<h2>My Notes (<%= @flashcard.notes.count %>)</h2>
+<h3>Notes about this Flashcard (<%= @flashcard.notes.count %>)</h3>
 <%= render @flashcard.notes %>
 
-<h2>Attached Resources (<%= @flashcard.uploads.count %>)</h2>
+<h3>Attached Resources (<%= @flashcard.uploads.count %>)</h3>
 <%= render @flashcard.uploads %>
 
 <!-- Allow for notes to be left about this flashcard -->

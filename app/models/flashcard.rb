@@ -2,10 +2,10 @@ class Flashcard < ActiveRecord::Base
   #flash cards are associated with one user
   belongs_to :user
   #order the topics of flashcards
-  default_scope -> { order('title DESC')}
+  default_scope { order('lower(title)')}
   
   #ensure that flashcards have a title of at least 2 characters
-  validates :title, presence: true, length: { minimum: 2}
+  validates :title, presence: true, length: { minimum: 2}, uniqueness: {case_sensitive: false}
   #flashcards have to be attached to a user
   validates :user_id, presence: true
   
