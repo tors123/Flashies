@@ -20,7 +20,7 @@ class SessionsController < ApplicationController
       # note "flash.now is specifically designed for displaying flash messages on rendered pages; 
       # unlike the contents of flash, its contents disappear as soon as there is an additional request" - http://www.railstutorial.org/book/sign_in_out
       flash.now[:error] = 'Invalid email/password combination'
-      render 'new'
+      render 'new' 
     end
   end
 

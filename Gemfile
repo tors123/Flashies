@@ -26,7 +26,7 @@ gem 'will_paginate', '~> 3.0.5'
 gem 'bootstrap-will_paginate', '0.0.9'
 
 #allow uploaded files
-gem 'paperclip'
+gem 'paperclip', "~> 3.5.3"
 gem 'aws-sdk'
 
 # bundle exec rake doc:rails generates the API under doc/api.

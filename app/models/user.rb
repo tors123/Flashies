@@ -7,6 +7,10 @@ class User < ActiveRecord::Base
   
   #ensure user email is all downcase to ensure uniqueness - uses before_save callback
   before_save { self.email = email.downcase } 
+  
+  #-- delete user image -- (see http://stackoverflow.com/questions/22315198/rails-file-upload-paperclip-on-edit)
+
+  
   has_secure_password
   #ensure that users have a name of resonible length
   validates :name, presence: true, length: { maximum: 50 }
@@ -15,10 +19,14 @@ class User < ActiveRecord::Base
   validates :email, presence: true, 
                     format: { with: VALID_EMAIL_REGEX},
                     uniqueness: { case_sensitive: false } 
+  validates :password, length: { minimum: 8 }, presence: true, on: :create  #on create means dont have to enter password when using form for editing
+  
+  #user image file
+  has_attached_file :avatar, :styles => { :medium => "300x300>", 
+                    :thumb => "100x100>" }, :default_url => "/assets/default_profile_thumb.jpg" 
+  validates_attachment :avatar, 
+          :content_type => { :content_type => /^image\/(bmp|gif|jpg|jpeg|png)/ }
 
-  
-  validates :password, length: { minimum: 8 }, presence: true
-  
   #use a large random string as the remember token for sessions
   #this base64 token will be stored on the browser
   def User.new_remember_token

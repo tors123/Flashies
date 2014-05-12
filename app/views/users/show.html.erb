@@ -1,21 +1,22 @@
+<!--Show the users profile image -->
 <p id="notice"><%= notice %></p>
+<!--Avatar /image from paperclip gem (http://rdoc.info/gems/paperclip#Storage)-->
+<%= image_tag @user.avatar.url(:thumb) %>
+<!--Display name-->
+<p><strong>Name:</strong><%= @user.name %></p>
 
-<p>
-  <strong>Name:</strong>
-  <%= @user.name %>
-</p>
 
+<!--Display Users flashcards -->
 <div>
-	<% if @user.flashcards.any? %>
-		<h3>My Flashcards (<% @user.flashcards.count %>)</h3>
+	<!--display number of flashcards user has-->	
+	<h3>My Flashcards (<%= @user.flashcards.count %>)</h3>
+	<% if @user.flashcards.any? %>		
 		<!--if the user has an flash cards, display them-->	
 		<ul class="users_flashcards">
 			<%= render @flashcards %>
 		</ul>
 		<!--allow for pages of flashcards-->
 		<% will_paginate @flashcards %>
-	<% else %>
-		<h3>My Flashcards (0)</h3>
 	<% end %>
 	<div>
 		<!--Link to create new flashcards-->

@@ -1,19 +1,33 @@
-<%= form_for(@user) do |f| %>
+
+<!--<%= form_for @user, :url => users_path, :html => { :multipart => true } do |form| %>
+  <%= form.file_field :avatar %>
+<% end %>-->
+
+
+<%= form_for @user do |f| %>
 	<!--Render an error msgs in the submitted form-->
-	<%= render 'shared/error_messages', object: f.object %>
+	<%= render 'shared/error_messages', object: f.object %><br />
 
     <%= f.label :Name %>
-    <%= f.text_field :name %>
+    <%= f.text_field :name %><br />
 
     <%= f.label :Email %>
-    <%= f.text_field :email %>
+    <%= f.text_field :email %><br />
 
+	<!-- display users current image -->
+	<%= image_tag @user.avatar.url(:thumb) %>
+	<!-- allow for upload of new image -->
+	<h3>Change Profile Image</h3>
+	<%= f.label :Image, "New Image" %>
+	<%= f.file_field :avatar %><br />  <!-- would be good to replace the "no file chosen" if current file is chosen... do through css label (can't find solution with paperclip) -->
 
-    <%= f.label :Password %>
-    <%= f.password_field :password %>
+	<h3>Create New Password</h3>
+    <%= f.label :Password, "New Password" %>
+    <%= f.password_field :password %><br />
 
 	<%= f.label :password_confirmation, "Confirm Password"%>
-    <%= f.password_field :password_confirmation %>
+    <%= f.password_field :password_confirmation %> <br />
 
+	<h3>Save Changes</h3>
     <%= f.submit "Save changes" %>
 <% end %>
