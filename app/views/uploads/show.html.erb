@@ -1,0 +1,8 @@
+<p><%=  File.basename(upload.upload.url, File.extname(upload.upload.url).downcase) %></p>
+<p>
+	<% if (upload.upload.upload_content_type != ["image/gif", "image/jpg", "image/jpeg", "image/png", "image/bmp"] %>
+   <iframe src=<%= upload.upload.url(:original) %> frameborder="0"></iframe>
+<% else %>
+    <%=  image_tag(upload.upload.url(:original)) %>
+  <% end %>
+</p>
