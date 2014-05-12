@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140511011822) do
+ActiveRecord::Schema.define(version: 20140512091534) do
 
   create_table "flashcards", force: true do |t|
     t.string   "title"
@@ -29,6 +29,16 @@ ActiveRecord::Schema.define(version: 20140511011822) do
   end
 
   add_index "notes", ["flashcard_id"], name: "index_notes_on_flashcard_id"
+
+  create_table "uploads", force: true do |t|
+    t.string   "upload_file_name"
+    t.string   "upload_content_type"
+    t.integer  "upload_file_size"
+    t.datetime "upload_updated_at"
+    t.integer  "flashcard_id"
+  end
+
+  add_index "uploads", ["flashcard_id"], name: "index_uploads_on_flashcard_id"
 
   create_table "users", force: true do |t|
     t.string   "name"

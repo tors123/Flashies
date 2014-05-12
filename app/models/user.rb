@@ -10,7 +10,7 @@ class User < ActiveRecord::Base
   
   #-- delete user image -- (see http://stackoverflow.com/questions/22315198/rails-file-upload-paperclip-on-edit)
 
-  
+  #ensures has a password
   has_secure_password
   #ensure that users have a name of resonible length
   validates :name, presence: true, length: { maximum: 50 }

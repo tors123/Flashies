@@ -1,13 +1,10 @@
+<p>
 <!-- Display a note -->
-<p>
-	<strong>Note:</strong>
-	<%= note.body %>
-</p>
-
+<strong>*</strong>
+<%= note.body %>
 <!-- Allow for deleting a note 
-	Will fire off a DELETE with this note's id to Notes controller -->
-<p>
-	<%= link_to 'Delete Note', [note.flashcard, note],
-	 	method: :delete,
-	 	data: { confirm: 'Are you sure you want to delete this note?' } %>
+Will fire off a DELETE with this note's id to Notes controller -->
+<%= link_to 'Delete Note', [note.flashcard, note],
+ 	method: :delete,
+ 	data: { confirm: 'Are you sure you want to delete this note?' } %>
 </p>

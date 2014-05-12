@@ -1,9 +1,9 @@
 class NotesController < ApplicationController
   
-  #create a note
+  #create a note -- associated objects use build rather than create
   def create
     @flashcard = Flashcard.find(params[:flashcard_id])    #find the flashcard this note is associated with
-    @note = @flashcard.notes.create(note_params)  #get the params entered and creat and save the note, automatically links to the particular flashcard
+    @note = @flashcard.notes.build(note_params)  #get the params entered and creat and save the note, automatically links to the particular flashcard
     
     # if the note     
     if @note.save             # save the model in the database. 
@@ -20,9 +20,12 @@ class NotesController < ApplicationController
   # and then remove it from the database and send us back to the show action for the flashcard.
   def destroy
     @flashcard = Flashcard.find(params[:flashcard_id])
-    @note = @flashcard.contes.find(params[:id])
-    redirect_to flashcard_path(@article)
+    @note = @flashcard.notes.find(params[:id])
+    @note.destroy
+    redirect_to flashcard_path(@flashcard)
   end
+  
+
   
   #--------------PRIVATE---------------
 
@@ -31,6 +34,7 @@ class NotesController < ApplicationController
   def note_params
     params.require(:note).permit(:body)
   end
+  
   
  
   

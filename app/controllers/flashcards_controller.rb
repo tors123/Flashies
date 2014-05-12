@@ -48,7 +48,7 @@ class FlashcardsController < ApplicationController
   
   # define the show method for a flash card
   def show
-    # Use Article.find to find the article we're interested in, passing in params[:id] to get the :id parameter 
+    # Use .find to find the card we're interested in, passing in params[:id] to get the :id parameter 
     # from the request. We also use an instance variable (prefixed by @) to hold a reference to the article object. 
     # (because Rails will pass all instance variables to the view)
     @flashcard = Flashcard.find(params[:id])

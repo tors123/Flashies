@@ -10,6 +10,8 @@ Rails.application.routes.draw do
   resources :flashcards do
     #flashcards have notes attached (nested resources)
     resources :notes
+     #flashcards have uploads attached (nested resources)
+    resources :uploads
   end
 
   # The priority is based upon order of creation: first created -> highest priority.

@@ -1,21 +1,24 @@
 <!--Display a flash card and its associated resources-->
-<p>
-  <strong>Topic:</strong>
-  <%= @flashcard.title %>
-</p>
+<h2>Topic:</h2>
+<p><%= @flashcard.title %></p>
  
-<p>
-  <strong>Question:</strong>
-  <%= @flashcard.question %>
-</p>
+<h2>Question:</h2>
+<p><%= @flashcard.question %></p>
 
-<!-- Show any notes left about this flashcard -->
-<h2>Notes</h2>
+<!-- Show any notes  or resources left about this flashcard -->
+<h2>My Notes (<%= @flashcard.notes.count %>)</h2>
 <%= render @flashcard.notes %>
 
+<h2>Attached Resources (<%= @flashcard.uploads.count %>)</h2>
+<%= render @flashcard.uploads %>
+
 <!-- Allow for notes to be left about this flashcard -->
-<h2>Add a Note</h2>
+<h3>Add a Note</h3>
 <%= render "notes/form" %>
+
+<h3>Upload a Resource</h3>
+<%= render "uploads/form" %>
+
 
 <!--Return to other pages-->
 <!--Go back to the list of flashcards page -->
@@ -23,5 +26,5 @@
 <!--Edit this flashcard -->
 <%= link_to 'Edit this Flashcard', edit_flashcard_path(@flashcard) %>
 <!--Delete this flashcard -->
-<%= link_to 'Delete', flashcard_path(@flashcard), method: :delete, 
+<%= link_to 'Delete this Flashcard', flashcard_path(@flashcard), method: :delete, 
 			data: { confirm: 'Are you sure you want to delete this flashcard?' } %> 
