@@ -1,0 +1,14 @@
+<%= render 'search' %>
+
+<% @flashcards.each do |f| %>
+	<span><%= f.title %></span>
+	<span><%= f.question %></span>
+	<span><%= link_to 'Show', flashcard_path(f) %></span>
+	<br/>
+
+<% end %>
+
+<!--Go back to the list of flashcards page -->
+	<%= link_to 'Back to My Flashcards', user_path(current_user) %>
+
+

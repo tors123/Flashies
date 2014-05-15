@@ -1,0 +1,5 @@
+<!-- search flashcards -->
+<%= form_tag(flashcards_path, :method => "get") do %>
+  <%= text_field_tag(:search, params[:search], placeholder: "Search") %>
+  <%= submit_tag "Search Flashcards", :name => nil %>
+<% end %>

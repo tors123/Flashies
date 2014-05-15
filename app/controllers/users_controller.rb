@@ -12,13 +12,11 @@ class UsersController < ApplicationController
     @users = User.all
   end
 
-  # GET /users/1
-  # GET /users/1.json
   def show
-    @user = User.find(params[:id])
-    @flashcards = @user.flashcards.paginate(page: params[:page])
+    @user = User.find(params[:id])   
+    @flashcards = @user.flashcards.paginate(page: params[:page])   
   end
-
+  
   # GET /users/new
   def new
     @user = User.new
@@ -63,6 +61,7 @@ class UsersController < ApplicationController
       format.json { head :no_content }
     end
   end
+
 
   #--------------PRIVATE---------------
   private

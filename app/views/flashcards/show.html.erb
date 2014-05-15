@@ -6,6 +6,12 @@
 <h2>Question:</h2>
 <p><%= @flashcard.question %></p>
 
+<div id="div_answerShow">
+	<h2>Answer</h2>
+	<p id='answer_display' style='display:none'><%= @flashcard.answer %></p>
+</div>
+<input type='button' id='btn_answerShow' value='Show Answer' onclick='JavaScript:showAnswer(this.value);'></button>
+
 <!-- Show any notes  or resources left about this flashcard -->
 <h3>Notes about this Flashcard (<%= @flashcard.notes.count %>)</h3>
 <%= render @flashcard.notes %>
@@ -23,7 +29,7 @@
 
 <!--Return to other pages-->
 <!--Go back to the list of flashcards page -->
-<%= link_to 'Back to My Home', user_path(current_user) %>
+<%= link_to 'Back to My Flashcards', user_path(current_user) %>
 <!--Edit this flashcard -->
 <%= link_to 'Edit this Flashcard', edit_flashcard_path(@flashcard) %>
 <!--Delete this flashcard -->

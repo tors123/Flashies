@@ -5,12 +5,15 @@
 <!--Display name-->
 <p><strong>Name:</strong><%= @user.name %></p>
 
-
+<%= render 'flashcards/search' %>
+		
 <!--Display Users flashcards -->
 <div>
 	<!--display number of flashcards user has-->	
 	<h3>My Flashcards (<%= @user.flashcards.count %>)</h3>
-	<% if @user.flashcards.any? %>		
+
+	<% if @user.flashcards.any? %>			
+
 		<!--if the user has an flash cards, display them-->	
 		<ul class="users_flashcards">
 			<%= render @flashcards %>

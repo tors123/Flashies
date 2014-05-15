@@ -54,7 +54,7 @@ module SessionsHelper
     unless signed_in?
       #get the stored location of where the user was trying to go
       store_location
-      redirect_to signin_url, notice: "Please sign in. user_contr"
+      redirect_to signin_url, notice: "Please sign in."
     end
   end
 

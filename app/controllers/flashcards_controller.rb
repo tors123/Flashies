@@ -55,15 +55,18 @@ class FlashcardsController < ApplicationController
   end
   
   #index action for listing all flashcards
-  def index
-    @flashcards = Flashcard.all
+  def index  
+    if params[:search]
+      @search = params[:search]
+      @flashcards = Flashcard.search(@search)
+    end
   end
- 
+   
   #--------------PRIVATE---------------
  
-  # create a method for accessing the flashcards paramaters (controllers require strong paramenters for security)
+  # method for accessing the flashcards paramaters (controllers require strong paramenters for security)
   private
   def flashcard_params
-    params.require(:flashcard).permit(:title, :question)  #permit allows to accept both title and question in this action
+    params.require(:flashcard).permit(:title, :question, :answer)  #permit allows to accept both title and question in this action
   end
 end
