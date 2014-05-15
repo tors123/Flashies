@@ -59,6 +59,8 @@ class FlashcardsController < ApplicationController
     if params[:search]
       @search = params[:search]
       @flashcards = Flashcard.search(@search)
+    else
+      @flashcards = Flashcard.all
     end
   end
    
@@ -67,6 +69,6 @@ class FlashcardsController < ApplicationController
   # method for accessing the flashcards paramaters (controllers require strong paramenters for security)
   private
   def flashcard_params
-    params.require(:flashcard).permit(:title, :question, :answer)  #permit allows to accept both title and question in this action
+    params.require(:flashcard).permit(:title, :question, :answer, :public)  #permit allows to accept both title and question in this action
   end
 end

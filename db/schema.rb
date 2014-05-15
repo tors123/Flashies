@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140515044106) do
+ActiveRecord::Schema.define(version: 20140515055421) do
 
   create_table "flashcards", force: true do |t|
     t.string   "title"
@@ -20,6 +20,7 @@ ActiveRecord::Schema.define(version: 20140515044106) do
     t.datetime "updated_at"
     t.integer  "user_id"
     t.string   "answer"
+    t.boolean  "public",     default: false
   end
 
   create_table "notes", force: true do |t|

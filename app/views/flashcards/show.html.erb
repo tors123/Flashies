@@ -12,6 +12,12 @@
 </div>
 <input type='button' id='btn_answerShow' value='Show Answer' onclick='JavaScript:showAnswer(this.value);'></button>
 
+<% if @flashcard.public? %>
+	<p>Public</p>
+<% else %>
+	<p>Private</p>
+<% end %>
+
 <!-- Show any notes  or resources left about this flashcard -->
 <h3>Notes about this Flashcard (<%= @flashcard.notes.count %>)</h3>
 <%= render @flashcard.notes %>
@@ -30,8 +36,11 @@
 <!--Return to other pages-->
 <!--Go back to the list of flashcards page -->
 <%= link_to 'Back to My Flashcards', user_path(current_user) %>
-<!--Edit this flashcard -->
-<%= link_to 'Edit this Flashcard', edit_flashcard_path(@flashcard) %>
-<!--Delete this flashcard -->
-<%= link_to 'Delete this Flashcard', flashcard_path(@flashcard), method: :delete, 
-			data: { confirm: 'Are you sure you want to delete this flashcard?' } %> 
+<!--If the user is the flashcards owner, they can edit and delete-->
+<% if current_user.id == @flashcard.user_id %>
+	<!--Edit this flashcard -->
+	<%= link_to 'Edit this Flashcard', edit_flashcard_path(@flashcard) %>
+	<!--Delete this flashcard -->
+	<%= link_to 'Delete this Flashcard', flashcard_path(@flashcard), method: :delete, 
+				data: { confirm: 'Are you sure you want to delete this flashcard?' } %> 
+<% end%>

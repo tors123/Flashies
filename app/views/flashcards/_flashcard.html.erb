@@ -3,7 +3,11 @@
 	<span><%= flashcard.title %></span>
 	<span><%= flashcard.question %></span>
 	<span><%= link_to 'Show', flashcard_path(flashcard) %></span>
-	<span><%= link_to 'Edit', edit_flashcard_path(flashcard) %></span>
-	<span><%= link_to 'Delete', flashcard_path(flashcard), method: :delete, 
-		data: { confirm: 'Are you sure you want to delete this flashcard?' } %></span> 
+	<% if signed_in? %>
+		<% if current_user.id == flashcard.user_id %>
+		<span><%= link_to 'Edit', edit_flashcard_path(flashcard) %></span>
+		<span><%= link_to 'Delete', flashcard_path(flashcard), method: :delete, 
+			data: { confirm: 'Are you sure you want to delete this flashcard?' } %></span> 
+		<% end %>
+	<% end %>
 </li>

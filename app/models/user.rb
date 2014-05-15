@@ -21,9 +21,12 @@ class User < ActiveRecord::Base
                     uniqueness: { case_sensitive: false } 
   validates :password, length: { minimum: 8 }, presence: true, on: :create  #on create means dont have to enter password when using form for editing
   
-  #user image file
-  has_attached_file :avatar, :styles => { :medium => "300x300>", 
-                    :thumb => "100x100>" }, :default_url => "/assets/default_profile_thumb.jpg" 
+  #user image file (using paperclip gem)
+  has_attached_file :avatar, 
+                    :styles => { :large => "500x500>",
+                                 :medium => "300x300>", 
+                                 :thumb => "100x100>" }, 
+                    :default_url => "/assets/default_profile_thumb.jpg" 
   validates_attachment :avatar, 
           :content_type => { :content_type => /^image\/(bmp|gif|jpg|jpeg|png)/ }
 

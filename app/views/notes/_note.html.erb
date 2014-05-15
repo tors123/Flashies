@@ -2,9 +2,11 @@
 <!-- Display a note -->
 <strong>*</strong>
 <%= note.body %>
-<!-- Allow for deleting a note 
+<!-- If the user is the flash cards owner, Allow for deleting a note 
 Will fire off a DELETE with this note's id to Notes controller -->
-<%= link_to 'Delete Note', [note.flashcard, note],
- 	method: :delete,
- 	data: { confirm: 'Are you sure you want to delete this note?' } %>
+<% if current_user.id == note.flashcard.user_id %>
+	<%= link_to 'Delete Note', [note.flashcard, note],
+	 	method: :delete,
+	 	data: { confirm: 'Are you sure you want to delete this note?' } %>
+ 	<% end %>
 </p>

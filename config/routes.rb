@@ -6,7 +6,6 @@ Rails.application.routes.draw do
   resources :sessions, only:[:new, :create, :destroy]
   # users have flashcards
   resources :users
-
   # Set up flashcard resources
   resources :flashcards do
     #flashcards have notes attached (nested resources)
