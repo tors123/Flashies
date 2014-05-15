@@ -37,4 +37,5 @@ Rails.application.configure do
   
   #allow access to ImageMagick
   Paperclip.options[:command_path] = "/c/windows/system32/"
+
 end
