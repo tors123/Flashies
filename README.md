@@ -1,12 +1,13 @@
-Flashies
-*****************************************************************************
+FLASHIES
+***************************************************************************************************************************************************
 	This is the sample application project
 	"Flashies"
 	v1.0
 	
 	dev by The Bandits
 	Jarrod Dickinson, Patrick Snelgar, Tori Lane
-*****************************************************************************
+***************************************************************************************************************************************************
+
 The Flashies app can help you prepare for tests, study for your papers, and view others notes about subjects
 
 FEATURES:
@@ -20,9 +21,9 @@ FEATURES:
 	  editing or removing flashcards and their resources
 
 
-****************************************************************
+***************************************************************************************************************************************************
 		HOW TO ACCESS 'FLASHIES' CODE ON A STANDALONE MACHINE
-****************************************************************
+***************************************************************************************************************************************************
 The Flashies app can be run from a standalone machine. Download the source code and install the app by 
 following these instructions.
 
@@ -35,10 +36,12 @@ Your machine must have the following installed to be able to run Flashies
 		Rails 3.2 or above installed
 
 	* Image Processor
-		ImageMagick must be installed and Flashies must have access to it. Download ImageMagick from http://www.imagemagick.org/ 
+		ImageMagick must be installed and Flashies must have access to it. Download ImageMagick from 
+		http://www.imagemagick.org/ 
 		To ensure that it does, on your command line, run: 
 			'which convert' 
-		which is one of the ImageMagick utilities. This will give you the path where that utility is installed. For example, it might return /usr/local/bin/convert.
+		which is one of the ImageMagick utilities. This will give you the path where that utility is installed. 
+		For example, it might return /usr/local/bin/convert.
 		The Flashies configuration file may need to be ajdusted to tell Flashies where to access ImageMagick. 
 		In the file'config/environments/development.rb', find the section of code:
 
@@ -85,7 +88,8 @@ Your machine must have the following installed to be able to run Flashies
 		- or -
 			rails s
 
-	7. 	When the terminal that has run the server command returns with the line 'Ctrl-C to shutdown server' (this may take a few seconds)
+	7. 	When the terminal that has run the server command returns with the line 'Ctrl-C to shutdown server' 
+		(this may take a few seconds)
 			=> Booting WEBrick
 			=> ....more ...
 			=> Ctrl-C to shutdown server
@@ -97,9 +101,9 @@ Your machine must have the following installed to be able to run Flashies
 	9. 	Sign up to access Flashies in force
 
 
-****************************************************************
-		HOW TO USE 'FLASHIES' ON A HEROKU
-****************************************************************
+***************************************************************************************************************************************************
+		HOW TO USE 'FLASHIES' ON HEROKU
+***************************************************************************************************************************************************
 You can use the Flashies app straight from Heroku's cloud server.
 
 	1. 	Open a browser window (ie, Chrome or Firefox), and type the following into the url
@@ -108,9 +112,9 @@ You can use the Flashies app straight from Heroku's cloud server.
 	2. 	Sign up to access Flashies in force
 	
 	
-****************************************************************
+***************************************************************************************************************************************************
 		HOW TO ACCESS 'FLASHIES' CODE ON THE CLOUD (GIT HUB)
-****************************************************************
+***************************************************************************************************************************************************
 The code for Flashies is accessible via GITHUB. 
 The GitHub for the Flashies app source code was moved 
 
@@ -126,26 +130,26 @@ We recommend using the "github.com/jarrodd07/final_app" version.
 You can download the Flashies source code to your machine by following these instructions:
 
 	1. 	Open a browser window (ie, Chrome or Firefox), and type the following into the url
-			for accessing the final code as deployed to Heroku
+			https://github.com/jarrodd07/final_app
 			
 
 	2. 	Select the button on the right column	
-			Download ZIP
+			"Download ZIP"
 		Which will download the source code to your downloads folder.
 	
 	3. 	Follow the 'Installing' instructions for 'HOW TO ACCESS 'FLASHIES' ON A STANDALONE MACHINE'
 		
 		
-****************************************************************
+***************************************************************************************************************************************************
 		HOW TO ACCESS 'FLASHIES' API DOCUMENTATION
-****************************************************************
+***************************************************************************************************************************************************
 The Flashies API documentation can be accessed form the Flashies app directories.
 
 
 
-****************************************************************
+***************************************************************************************************************************************************
 		FEATURES INCLUDED IN 'FLASHIES'
-****************************************************************
+***************************************************************************************************************************************************
 The following are features implemented as optional extras
 
 	1.	Upload Feature: Paperclip
@@ -153,8 +157,8 @@ The following are features implemented as optional extras
 		See https://github.com/thoughtbot/paperclip
 		
 	2. 	Online File Storage: S3
-		The Flashies app makes use of Amazons Web Storage 'Amazon S3' to allow users to store files and access them online.
-		See https://aws.amazon.com/s3/
+		The Flashies app makes use of Amazons Web Storage 'Amazon S3' to allow users to store files and access them 
+		online.See https://aws.amazon.com/s3/
 		
 	3. 	Security/Signin in feature: Session tokens
 		The Flashies app remembers a users login by using (permanent) session cookies, so the user will be 
