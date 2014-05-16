@@ -7,6 +7,7 @@ Flashies
 	dev by The Bandits
 	Jarrod Dickinson, Patrick Snelgar, Tori Lane
 *****************************************************************************
+----------------------------
 The Flashies app can help you prepare for tests, study for your papers, and view others notes about subjects
 
 FEATURES:
@@ -18,7 +19,7 @@ FEATURES:
 	* Mark flashcards as public to let other users view them,
 	* Assigning public status on a flashcard allows other users to add to them, but gives you authoritative access for 
 	  editing or removing flashcards and their resources
-*****************************************************************************
+----------------------------
 
 ****************************************************************
 		HOW TO ACCESS 'FLASHIES' CODE ON A STANDALONE MACHINE
@@ -47,10 +48,13 @@ Your machine must have the following installed to be able to run Flashies
 
 		And change the file path from "/c/windows/system32/" to whatever 'which convert' returned.
 		
-		If you're on Mac OS X, you'll want to run the following with Homebrew:
-			brew install imagemagick
-		If you are dealing with pdf uploads or running the test suite, you'll also need GhostScript to be installed. On Mac OS X, you can also install that using Homebrew:
-			brew install gs
+		MAC OS X:
+			If you're on Mac OS X, you'll want to run the following with Homebrew:
+				brew install imagemagick
+			If you are dealing with pdf uploads or running the test suite, you'll also need GhostScript to be installed. 
+			On Mac OS X, you can also install that using Homebrew:
+				brew install gs
+				
 	* File command
 		The Unix file command is required for content type checking.
 
@@ -111,7 +115,7 @@ You can use the Flashies app straight from Heroku's cloud server.
 The code for Flashies is accessible via GITHUB. You can download it to your machine by following these instructions:
 
 	1. 	Open a browser window (ie, Chrome or Firefox), and type the following into the url
-			https://github.com/jarrodd07/final_app
+			https://github.com/tors123/Flashies
 
 	2. 	Select the button on the right column	
 			Download ZIP
@@ -123,7 +127,8 @@ The code for Flashies is accessible via GITHUB. You can download it to your mach
 ****************************************************************
 		HOW TO ACCESS 'FLASHIES' API DOCUMENTATION
 ****************************************************************
-3. access your api documentation
+The Flashies API documentation can be accessed form the Flashies app directories.
+
 
 
 ****************************************************************
@@ -131,6 +136,21 @@ The code for Flashies is accessible via GITHUB. You can download it to your mach
 ****************************************************************
 The following are features implemented as optional extras
 
-	1.
-	2.
-	3.
+	1.	Upload Feature: Paperclip
+		The Flashies app makes use of Paperclip by thoughtbot for file uploading.
+		See https://github.com/thoughtbot/paperclip
+		
+	2. 	Online File Storage: S3
+		The Flashies app makes use of Amazons Web Storage 'Amazon S3' to allow users to store files and access them online.
+		See https://aws.amazon.com/s3/
+		
+	3. 	Security/Signin in feature: Session tokens
+		The Flashies app remembers a users login by using (permanent) session cookies, so the user will be 
+		logged in next time they return to Flashies on the same machiine. The app requires a user to expicitly sign out to sign out. 
+		The app stores the login data in a base64 token on the browser, and also a hash digest (the result of running it through a one-way 
+		cryptographic hash funtion) stored in the database. A new session token is created each time the user signs in.
+		
+	4.	Friendly Forwarding: 
+		The app will forward a user where they were trying to go if they are trying to access a part of the app that
+		requires the user to be signed in.
+		
