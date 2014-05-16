@@ -9,12 +9,12 @@
 The Flashies app can help you prepare for tests, study for your papers, and view others notes about subjects
 
 FEATURES:
-	* Private login to keep flashcards and resources secure
-	* Create flashcards about topics you are studying or papers you are attending and store them in one place
-	* Attach resources and notes to your flashcards, resources can be any file; pdfs, word documents, images, and others
-	* Use the online storage to access your flashcards anywhere
-	* Search your flashcards for keywords
-	* Mark flashcards as public to let other users view them
+	* Private login to keep flashcards and resources secure,
+	* Create flashcards about topics you are studying or papers you are attending and store them in one place,
+	* Attach resources and notes to your flashcards, resources can be any file; pdfs, word documents, images, and others,
+	* Use the online storage to access your flashcards anywhere,
+	* Search your flashcards for keywords,
+	* Mark flashcards as public to let other users view them,
 	* Assigning public status on a flashcard allows other users to add to them, but gives you authoritative access for 
 	  editing or removing flashcards and their resources
 
