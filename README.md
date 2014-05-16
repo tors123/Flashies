@@ -1,16 +1,30 @@
-*******************************************************************
+*****************************************************************************
 	This is the sample application project
 	"Flashies"
 	v1.0
 	
 	dev by The Bandits
 	Jarrod Dickinson, Patrick Snelgar, Tori Lane
-*******************************************************************
+*****************************************************************************
+The Flashies app can help you prepare for tests, study for your papers, and view others notes about subjects
+
+FEATURES:
+	* Private login to keep flashcards and resources secure
+	* Create flashcards about topics you are studying or papers you are attending and store them in one place
+	* Attach resources and notes to your flashcards, resources can be any file; pdfs, word documents, images, and others
+	* Use the online storage to access your flashcards anywhere
+	* Search your flashcards for keywords
+	* Mark flashcards as public to let other users view them
+	* Assigning public status on a flashcard allows other users to add to them, but gives you authoritative access for 
+	  editing or removing flashcards and their resources
 
 
 ****************************************************************
-		HOW TO ACCESS 'FLASHIES' ON A STANDALONE MACHINE
+		HOW TO ACCESS 'FLASHIES' CODE ON A STANDALONE MACHINE
 ****************************************************************
+The Flashies app can be run from a standalone machiine. Download the source code and install the app by 
+following these instructions.
+
 ----------------------------
 	Prerequisites:
 ----------------------------
@@ -80,12 +94,31 @@ Your machine must have the following installed to be able to run Flashies
 
 
 ****************************************************************
-		HOW TO ACCESS 'FLASHIES' ON A HEROKU
+		HOW TO USE 'FLASHIES' ON A HEROKU
 ****************************************************************
-2. access your code already deployed on Heroku or other cloud environments
+You can use the Flashies app straight from Heroku's cloud server.
 
+	1. 	Open a browser window (ie, Chrome or Firefox), and type the following into the url
+			http://flashies333.herokuapp.com/
 
+	2. 	Sign up to access Flashies in force
+	
+	
+****************************************************************
+		HOW TO ACCESS 'FLASHIES' CODE ON THE CLOUD (GIT HUB)
+****************************************************************
+The code for Flashies is accessible via GITHUB. You can download it to your machine by following these instructions:
 
+	1. 	Open a browser window (ie, Chrome or Firefox), and type the following into the url
+			https://github.com/jarrodd07/final_app
+
+	2. 	Select the button on the right column	
+			Download ZIP
+		Which will download the source code to your downloads folder.
+	
+	3. 	Follow the 'Installing' instructions for 'HOW TO ACCESS 'FLASHIES' ON A STANDALONE MACHINE'
+		
+		
 ****************************************************************
 		HOW TO ACCESS 'FLASHIES' API DOCUMENTATION
 ****************************************************************
