@@ -7,7 +7,6 @@ Flashies
 	dev by The Bandits
 	Jarrod Dickinson, Patrick Snelgar, Tori Lane
 *****************************************************************************
-*****************************************************************************
 The Flashies app can help you prepare for tests, study for your papers, and view others notes about subjects
 
 FEATURES:
