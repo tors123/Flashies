@@ -1,3 +1,4 @@
+Flashies
 *****************************************************************************
 	This is the sample application project
 	"Flashies"
@@ -6,8 +7,9 @@
 	dev by The Bandits
 	Jarrod Dickinson, Patrick Snelgar, Tori Lane
 *****************************************************************************
-The Flashies app can help you prepare for tests, study for your papers, and view others notes about subjects
 ----------------------------
+The Flashies app can help you prepare for tests, study for your papers, and view others notes about subjects
+
 FEATURES:
 	* Private login to keep flashcards and resources secure,
 	* Create flashcards about topics you are studying or papers you are attending and store them in one place,
