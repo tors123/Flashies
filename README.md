@@ -7,7 +7,6 @@ Flashies
 	dev by The Bandits
 	Jarrod Dickinson, Patrick Snelgar, Tori Lane
 *****************************************************************************
-----------------------------
 The Flashies app can help you prepare for tests, study for your papers, and view others notes about subjects
 
 FEATURES:
@@ -19,7 +18,7 @@ FEATURES:
 	* Mark flashcards as public to let other users view them,
 	* Assigning public status on a flashcard allows other users to add to them, but gives you authoritative access for 
 	  editing or removing flashcards and their resources
-----------------------------
+
 
 ****************************************************************
 		HOW TO ACCESS 'FLASHIES' CODE ON A STANDALONE MACHINE
