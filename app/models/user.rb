@@ -37,7 +37,7 @@ class User < ActiveRecord::Base
   end
   
   #hash the remember token using SHA1 hashing algorithm (for speed)
-  # this hash digest  (the result of running it through a one-way cryptographic hash funtion) will be stored in the database
+  # this hash digest (the result of running it through a one-way cryptographic hash funtion) will be stored in the database
   def User.digest(token)
     Digest::SHA1.hexdigest(token.to_s)
   end

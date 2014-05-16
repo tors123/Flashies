@@ -114,8 +114,10 @@ You can use the Flashies app straight from Heroku's cloud server.
 ****************************************************************
 The code for Flashies is accessible via GITHUB. 
 The GitHub for the Flashies app source code was moved 
+
 	from https://github.com/tors123/Flashies 
 	to https://github.com/jarrodd07/final_app
+	
 but the source code for accessing from a local machine should be accessible from either of these.
 Note that the version on "github.com/tors123/Flashies" does not include Rdocs or css styling,
 and that the version "github.com/jarrodd07/final_app" will include Rdocs and configuring for Heroku deployment.
