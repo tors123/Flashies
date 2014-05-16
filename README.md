@@ -163,6 +163,6 @@ The following are features implemented as optional extras
 		cryptographic hash funtion) stored in the database. A new session token is created each time the user signs in.
 		
 	4.	Friendly Forwarding: 
-		The app will forward a user where they were trying to go if they are trying to access a part of the app that
-		requires the user to be signed in.
+		The app will forward a user where they were trying to go after they have signed in if they are trying to access a 
+		part of the app that requires the user to be signed in.
 		
